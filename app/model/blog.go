@@ -82,23 +82,3 @@ func CreatePost(post Article) error {
 
 	return nil
 }
-
-func UpdatePost(post Article) error {
-
-	query := `update posts set title=$1, content=$2 where id=$3;`
-
-	_, err := db.Exec(query, post.Title, post.Content, post.ID)
-	if err != nil {
-		return err
-	}
-	return nil
-}
-
-func DeletePost(id uint64) error {
-	query := `delete from posts where id=$1;`
-	_, err := db.Exec(query, id)
-	if err != nil {
-		return err
-	}
-	return nil
-}

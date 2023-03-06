@@ -2,7 +2,7 @@ version: '3'
 
 services:
     postgres:
-        image: postgres:12
+        image: postgres:14
         restart: always
         networks:
             - backend
@@ -15,7 +15,7 @@ services:
             test: [ "CMD", "pg_isready", "-q", "-d", "devdb", "-U", "dev" ]
             timeout: 45s
             interval: 10s
-            retries: 10
+            retries: 5
     
     app:
         build: app
