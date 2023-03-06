@@ -2,8 +2,8 @@ package main
 
 import (
 
-	"github.com/nerdcademy/restapi/controller"
-	"github.com/nerdcademy/restapi/model"
+	controller "github.com/pilinux/gorest/controller"
+	model "github.com/pilinux/gorest/database"
 )
 
 func main() {
