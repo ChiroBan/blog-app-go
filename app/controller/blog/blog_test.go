@@ -69,7 +69,7 @@ func TestGetPost(t *testing.T) {
 		t.Run(test.name, func(t *testing.T){
 			defer test.server.Close()
 
-			resp, err := GetPost(test.server.URL)
+			resp, err := TestGetPost(test.server.URL)
 
 			if !reflect.DeepEqual(resp, test.response) {
 				t.Errorf("FAILED: expected %v, got %v\n", test.response, resp)
